@@ -1,15 +1,13 @@
-#include <stdio.h>
 #include <stdbool.h>
-#include <unistd.h>
+#include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+static const char *TAG = "main";
 
 void app_main(void)
 {
     while (true) {
-//        printf("Hello from app_main!\n");
-//        sleep(1);
-        
+        ESP_LOGI(TAG, "Main loop running");
         vTaskDelay(300 / portTICK_PERIOD_MS);
     }
 }
